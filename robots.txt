@@ -1,42 +1,100 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+# Robots.txt оптимізовано для 2025 року - Перевершує досконалість
+# Створено для україномовного середовища, ШІ, Google ШІ, голосових помічників та передового SEO
+# Сайт: https://clairvoyancemedium.github.io/Efektyvni-ta-shvydki-zaklynannya-z-vbudovanym-zakhystom.github.io/
+# Остання оновлення: 09/03/2025 14:00 GMT
+# Примітка: Перевірити за допомогою Google Search Console та robotstxt.org для підтвердження
+
+##########################
+# Загальний дозвіл       #
+##########################
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
+Disallow: /private/          # Приватні каталоги (наприклад, адмінка, скрипти)
+Disallow: /temp/             # Тимчасові папки
+Disallow: /*?*               # Уникаємо дубльованого вмісту (параметри URL)
+Allow: /*.css$               # CSS для оптимального відображення (доступно всім)
+Allow: /*.js$                # JS необхідний (доступно всім)
+Allow: /*.pdf$               # Дозволяємо стратегічні PDF (наприклад, посібники)
+Allow: /                     # Дозвіл за замовчуванням
+
+########################################
+# Googlebot (включаючи Google ШІ 2025) #
+########################################
+User-agent: Googlebot
+Disallow: /private/
+Disallow: /temp/
+Allow: /ритуали/             # Доступ до ритуалів
+Allow: /захист/              # Доступ до захисту
+Allow: /зняття-проклять/     # Доступ до зняття проклять
+
+###########################################
+# Голосові помічники                     #
+###########################################
+User-agent: Googlebot-Voice
+Disallow: /private/
+Disallow: /temp/
+Allow: /питання-відповіді/   # FAQ для голосового пошуку
+Allow: /прості-ритуали/     # Прості ритуали
+Allow: /поради/             # Поради
+User-agent: Amazonbot        # Гіпотетично для Alexa
+Disallow: /private/
+Disallow: /temp/
+Allow: /питання-відповіді/
+Allow: /поради/
+User-agent: Applebot         # Гіпотетично для Siri
+Disallow: /private/
+Disallow: /temp/
+Allow: /питання-відповіді/
+Allow: /поради/
+
+###########################################
+# Bing (україномовне середовище поза Google) #
+###########################################
+User-agent: Bingbot
+Disallow: /private/
+Disallow: /temp/
+
+#################################
+# Блокування небажаних роботів #
+#################################
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+##################################################
+# Партнери та аналізатори Google                #
+##################################################
+User-agent: Mediapartners-Google
+Disallow: /private/
+User-agent: AdsBot-Google
 Disallow: /private/
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+##################################################
+# Нові ШІ-краулери (прогноз на 2025)           #
+##################################################
+User-agent: xAI-Crawler
+Disallow: /private/
+User-agent: OpenAI-Crawler
+Disallow: /private/
+User-agent: AnthropicBot
+Disallow: /private/
+User-agent: Qwantify         # Для україномовного середовища
+Disallow: /private/
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
+##################################################
+# Передова оптимізація (пріоритет мобільних)    #
+##################################################
+User-agent: Googlebot-Mobile
+Disallow: /private/
+Disallow: /temp/
+Allow: /ритуали/
+Allow: /захист/
+Allow: /зняття-проклять/
 
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
-User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
-User-agent: Bingbot
-Allow: /
-
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
-Disallow: /
-
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+##################
+# Карта сайту та сканування #
+##################
+Sitemap: https://clairvoyancemedium.github.io/Efektyvni-ta-shvydki-zaklynannya-z-vbudovanym-zakhystom.github.io/sitemap.xml
+Crawl-delay: 0.5
